@@ -27,7 +27,7 @@ class StaticController(lights.Controller):
             hue=hue,
             sat=sat,
             bri=self.settings.static_start_bri,
-            on=True,
+            on=False if self.settings.static_start_bri == 0 else True,
         )
 
     def on_playback_pause(self):
